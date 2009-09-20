@@ -37,4 +37,29 @@
         </xsd:restriction>
     </xsd:simpleType>
     <xsd:element name="newElement"/>
+    <xsd:simpleType name="Airlines">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Economy">
+                <xsd:annotation>
+                    <xsd:documentation>Economy Coach</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Premium">
+                <xsd:annotation>
+                    <xsd:documentation>Premium Economy</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Business">
+                <xsd:annotation>
+                    <xsd:documentation>Business</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="FirstClass">
+                <xsd:annotation>
+                    <xsd:documentation>First Class</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
 </xsd:schema>
+
