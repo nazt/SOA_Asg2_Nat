@@ -115,6 +115,14 @@
             </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
-
+    <xsd:simpleType name="Airlines">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="American Airlines"/>
+            <xsd:enumeration value="China Airlines"/>
+            <xsd:enumeration value="EVA Airways"/>
+            <xsd:enumeration value="Thai Air International"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 </xsd:schema>
+
 
