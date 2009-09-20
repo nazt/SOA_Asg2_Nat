@@ -60,25 +60,6 @@
             </xsd:enumeration>
         </xsd:restriction>
     </xsd:simpleType>
-    <xsd:complexType name="PassengerTypes">
-        <xsd:sequence>
-            <xsd:simpleType name="Adults">
-                <xsd:restriction base="xsd:integer">
-                    <xsd:maxExclusive value="6"/>
-                </xsd:restriction>
-            </xsd:simpleType>
-            <xsd:simpleType name="Seniors">
-                <xsd:restriction base="xsd:integer">
-                    <xsd:maxExclusive value="6"/>
-                </xsd:restriction>
-            </xsd:simpleType>
-            <xsd:simpleType name="Children">
-                <xsd:restriction base="xsd:integer">
-                    <xsd:maxExclusive value="6"/>
-                </xsd:restriction>
-            </xsd:simpleType>
-        </xsd:sequence>
-    </xsd:complexType>
     <xsd:simpleType name="AirlinesList">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="American Airlines"/>
@@ -107,28 +88,45 @@
             <xsd:enumeration value="Hotel + Car"/>
         </xsd:restriction>
     </xsd:simpleType>
+    <xsd:complexType name="passengerType">
+        <xsd:sequence>
+            <xsd:element name="Adults" type="tns:passengerConstraint"/>
+            <xsd:element name="Seniors" type="tns:passengerConstraint"/>
+            <xsd:element name="Childrens" type="tns:passengerConstraint"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="passengerConstraint">
+        <xsd:restriction base="xsd:integer">
+            <xsd:maxExclusive value="6"/>
+        </xsd:restriction>
+    </xsd:simpleType>
     <xsd:complexType name="FlightReservationType">
         <xsd:sequence>
             <xsd:element name="Service" type="tns:ServiceType"></xsd:element>
             <xsd:element name="Ticket" type="tns:TicketType"></xsd:element>
             <xsd:element name="LeavingFrom" type="xsd:string"></xsd:element>
             <xsd:element name="GoingTo" type="xsd:string"></xsd:element>
-            <xsd:element name="DepartingDate" type="xsd:date"></xsd:element>
-            <xsd:element name="DapartingTime" type="tns:TimeList"></xsd:element>
-            <xsd:element name="ReturningDate" type="xsd:date"></xsd:element>
-            <xsd:element name="ReturningTime" type="tns:TimeList"></xsd:element>
-            <xsd:element name="Passengers" type="tns:PassengerTypes"></xsd:element>
-            <xsd:element name="NonStopOnly" type="xsd:boolean"></xsd:element>
-            <xsd:element name="AvoidMostChangePenalty">
-                <xsd:complexType>
-                    <xsd:sequence/>
-                </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="Airline" type="tns:AirlinesList"></xsd:element>
-            <xsd:element name="AirlineClass" type="tns:AirlineClasses"></xsd:element>
+            <xsd:element name="DepartingDate" type="xsd:date"/>
+            <xsd:element name="DapartingTime" type="tns:TimeList"/>
+            <xsd:element name="ReturningDate" type="xsd:date"/>
+            <xsd:element name="ReturningTime" type="tns:TimeList"/>
+            <xsd:element name="Passengers" type="tns:passengerType"/>
+            <xsd:element name="NonStopOnly" type="xsd:boolean"/>
+            <xsd:element name="AvoidMostChangePenalty" type="xsd:boolean"/>
+            <xsd:element name="Airline" type="tns:AirlinesList"/>
+            <xsd:element name="AirlineClass" type="tns:AirlineClasses"/>
+            
         </xsd:sequence>
     </xsd:complexType>
     <xsd:element name="FlightReservation" type="tns:FlightReservationType"></xsd:element>
 </xsd:schema>
+
+
+
+
+
+
+
+
 
 
