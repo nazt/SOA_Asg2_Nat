@@ -107,4 +107,27 @@
             <xsd:enumeration value="Hotel + Car"/>
         </xsd:restriction>
     </xsd:simpleType>
+    <xsd:complexType name="FlightReservationType">
+        <xsd:sequence>
+            <xsd:element name="Service" type="tns:ServiceType"></xsd:element>
+            <xsd:element name="Ticket" type="tns:TicketType"></xsd:element>
+            <xsd:element name="LeavingFrom" type="xsd:string"></xsd:element>
+            <xsd:element name="GoingTo" type="xsd:string"></xsd:element>
+            <xsd:element name="DepartingDate" type="xsd:date"></xsd:element>
+            <xsd:element name="DapartingTime" type="tns:TimeList"></xsd:element>
+            <xsd:element name="ReturningDate" type="xsd:date"></xsd:element>
+            <xsd:element name="ReturningTime" type="tns:TimeList"></xsd:element>
+            <xsd:element name="Passengers" type="tns:PassengerTypes"></xsd:element>
+            <xsd:element name="NonStopOnly" type="xsd:boolean"></xsd:element>
+            <xsd:element name="AvoidMostChangePenalty">
+                <xsd:complexType>
+                    <xsd:sequence/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Airline" type="tns:AirlinesList"></xsd:element>
+            <xsd:element name="AirlineClass" type="tns:AirlineClasses"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 </xsd:schema>
+
+

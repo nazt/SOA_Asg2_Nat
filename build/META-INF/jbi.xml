@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns0="http://www.sun.com/jbi/descriptor/service-unit" version="1.0">
+    <services binding-component="false"/>
+</jbi>
