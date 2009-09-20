@@ -128,6 +128,7 @@
             <xsd:element name="AirlineClass" type="tns:AirlineClasses"></xsd:element>
         </xsd:sequence>
     </xsd:complexType>
+    <xsd:element name="FlightReservation" type="tns:FlightReservationType"></xsd:element>
 </xsd:schema>
 
 
