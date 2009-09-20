@@ -62,57 +62,21 @@
     </xsd:simpleType>
     <xsd:complexType name="PassengerTypes">
         <xsd:sequence>
-            <xsd:element name="Children">
-                <xsd:complexType>
-                    <xsd:attribute name="number">
-                        <xsd:simpleType>
-                            <xsd:restriction base="xsd:string">
-                                <xsd:enumeration value="0"/>
-                                <xsd:enumeration value="1"/>
-                                <xsd:enumeration value="2"/>
-                                <xsd:enumeration value="3"/>
-                                <xsd:enumeration value="4"/>
-                                <xsd:enumeration value="5"/>
-                                <xsd:enumeration value="6"/>
-                            </xsd:restriction>
-                        </xsd:simpleType>
-                    </xsd:attribute>
-                </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="Adults">
-                <xsd:complexType>
-                    <xsd:attribute name="number">
-                        <xsd:simpleType>
-                            <xsd:restriction base="xsd:string">
-                                <xsd:enumeration value="0"/>
-                                <xsd:enumeration value="1"/>
-                                <xsd:enumeration value="2"/>
-                                <xsd:enumeration value="3"/>
-                                <xsd:enumeration value="4"/>
-                                <xsd:enumeration value="5"/>
-                                <xsd:enumeration value="6"/>
-                            </xsd:restriction>
-                        </xsd:simpleType>
-                    </xsd:attribute>
-                </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="Seniors">
-                <xsd:complexType>
-                    <xsd:attribute name="number">
-                        <xsd:simpleType>
-                            <xsd:restriction base="xsd:string">
-                                <xsd:enumeration value="0"/>
-                                <xsd:enumeration value="1"/>
-                                <xsd:enumeration value="2"/>
-                                <xsd:enumeration value="3"/>
-                                <xsd:enumeration value="4"/>
-                                <xsd:enumeration value="5"/>
-                                <xsd:enumeration value="6"/> 
-                            </xsd:restriction>
-                        </xsd:simpleType>
-                    </xsd:attribute>
-                </xsd:complexType>
-            </xsd:element>
+            <xsd:simpleType name="Adults">
+                <xsd:restriction base="xsd:integer">
+                    <xsd:maxExclusive value="6"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="Seniors">
+                <xsd:restriction base="xsd:integer">
+                    <xsd:maxExclusive value="6"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="Children">
+                <xsd:restriction base="xsd:integer">
+                    <xsd:maxExclusive value="6"/>
+                </xsd:restriction>
+            </xsd:simpleType>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:simpleType name="Airlines">
