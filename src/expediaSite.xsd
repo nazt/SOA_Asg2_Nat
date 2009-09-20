@@ -87,6 +87,13 @@
             <xsd:enumeration value="Thai Air International"/>
         </xsd:restriction>
     </xsd:simpleType>
+    <xsd:simpleType name="Ticket">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Roundtrip"/>
+            <xsd:enumeration value="One Way"/>
+            <xsd:enumeration value="Multiple definitions"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 </xsd:schema>
 
 
