@@ -4,5 +4,37 @@
     targetNamespace="http://xml.netbeans.org/schema/expediaSite"
     xmlns:tns="http://xml.netbeans.org/schema/expediaSite"
     elementFormDefault="qualified">
-
+    <xsd:simpleType name="TimeList">
+        <xsd:restriction base="xsd:string">
+                                                                    <xsd:enumeration value="Any"/>
+                                                                    <xsd:enumeration value="12 AM"/>
+                                                                    <xsd:enumeration value="1 AM"/>
+                                                                    <xsd:enumeration value="2 AM"/>
+                                                                    <xsd:enumeration value="3 AM"/>
+                                                                    <xsd:enumeration value="4 AM"/>
+                                                                    <xsd:enumeration value="5 AM"/>
+                                                                    <xsd:enumeration value="6 AM"/>
+                                                                    <xsd:enumeration value="7 AM"/>
+                                                                    <xsd:enumeration value="8 AM"/>
+                                                                    <xsd:enumeration value="9 AM"/>
+                                                                    <xsd:enumeration value="10 AM"/>
+                                                                    <xsd:enumeration value="11 AM"/>
+                                                                    <xsd:enumeration value="12 PM"/>
+                                                                    <xsd:enumeration value="1 PM"/>
+                                                                    <xsd:enumeration value="2 PM"/>
+                                                                    <xsd:enumeration value="3 PM"/>
+                                                                    <xsd:enumeration value="4 PM"/>
+                                                                    <xsd:enumeration value="5 PM"/>
+                                                                    <xsd:enumeration value="6 PM"/>
+                                                                    <xsd:enumeration value="7 PM"/>
+                                                                    <xsd:enumeration value="8 PM"/>
+                                                                    <xsd:enumeration value="9 PM"/>
+                                                                    <xsd:enumeration value="10 PM"/>
+                                                                    <xsd:enumeration value="11 PM"/>
+                                                                    <xsd:enumeration value="Morn."/>
+                                                                    <xsd:enumeration value="Noon"/>
+                                                                    <xsd:enumeration value="Eve."/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:element name="newElement"/>
 </xsd:schema>
