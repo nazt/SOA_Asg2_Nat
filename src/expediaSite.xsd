@@ -6,38 +6,37 @@
     elementFormDefault="qualified">
     <xsd:simpleType name="TimeList">
         <xsd:restriction base="xsd:string">
-                                                                    <xsd:enumeration value="Any"/>
-                                                                    <xsd:enumeration value="12 AM"/>
-                                                                    <xsd:enumeration value="1 AM"/>
-                                                                    <xsd:enumeration value="2 AM"/>
-                                                                    <xsd:enumeration value="3 AM"/>
-                                                                    <xsd:enumeration value="4 AM"/>
-                                                                    <xsd:enumeration value="5 AM"/>
-                                                                    <xsd:enumeration value="6 AM"/>
-                                                                    <xsd:enumeration value="7 AM"/>
-                                                                    <xsd:enumeration value="8 AM"/>
-                                                                    <xsd:enumeration value="9 AM"/>
-                                                                    <xsd:enumeration value="10 AM"/>
-                                                                    <xsd:enumeration value="11 AM"/>
-                                                                    <xsd:enumeration value="12 PM"/>
-                                                                    <xsd:enumeration value="1 PM"/>
-                                                                    <xsd:enumeration value="2 PM"/>
-                                                                    <xsd:enumeration value="3 PM"/>
-                                                                    <xsd:enumeration value="4 PM"/>
-                                                                    <xsd:enumeration value="5 PM"/>
-                                                                    <xsd:enumeration value="6 PM"/>
-                                                                    <xsd:enumeration value="7 PM"/>
-                                                                    <xsd:enumeration value="8 PM"/>
-                                                                    <xsd:enumeration value="9 PM"/>
-                                                                    <xsd:enumeration value="10 PM"/>
-                                                                    <xsd:enumeration value="11 PM"/>
-                                                                    <xsd:enumeration value="Morn."/>
-                                                                    <xsd:enumeration value="Noon"/>
-                                                                    <xsd:enumeration value="Eve."/>
+            <xsd:enumeration value="Any"/>
+            <xsd:enumeration value="12 AM"/>
+            <xsd:enumeration value="1 AM"/>
+            <xsd:enumeration value="2 AM"/>
+            <xsd:enumeration value="3 AM"/>
+            <xsd:enumeration value="4 AM"/>
+            <xsd:enumeration value="5 AM"/>
+            <xsd:enumeration value="6 AM"/>
+            <xsd:enumeration value="7 AM"/>
+            <xsd:enumeration value="8 AM"/>
+            <xsd:enumeration value="9 AM"/>
+            <xsd:enumeration value="10 AM"/>
+            <xsd:enumeration value="11 AM"/>
+            <xsd:enumeration value="12 PM"/>
+            <xsd:enumeration value="1 PM"/>
+            <xsd:enumeration value="2 PM"/>
+            <xsd:enumeration value="3 PM"/>
+            <xsd:enumeration value="4 PM"/>
+            <xsd:enumeration value="5 PM"/>
+            <xsd:enumeration value="6 PM"/>
+            <xsd:enumeration value="7 PM"/>
+            <xsd:enumeration value="8 PM"/>
+            <xsd:enumeration value="9 PM"/>
+            <xsd:enumeration value="10 PM"/>
+            <xsd:enumeration value="11 PM"/>
+            <xsd:enumeration value="Morn."/>
+            <xsd:enumeration value="Noon"/>
+            <xsd:enumeration value="Eve."/>
         </xsd:restriction>
     </xsd:simpleType>
-    <xsd:element name="newElement"/>
-    <xsd:simpleType name="Airlines">
+    <xsd:simpleType name="AirlineClasses">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="Economy">
                 <xsd:annotation>
@@ -61,5 +60,61 @@
             </xsd:enumeration>
         </xsd:restriction>
     </xsd:simpleType>
+    <xsd:complexType name="PassengerTypes">
+        <xsd:sequence>
+            <xsd:element name="Children">
+                <xsd:complexType>
+                    <xsd:attribute name="number">
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:enumeration value="0"/>
+                                <xsd:enumeration value="1"/>
+                                <xsd:enumeration value="2"/>
+                                <xsd:enumeration value="3"/>
+                                <xsd:enumeration value="4"/>
+                                <xsd:enumeration value="5"/>
+                                <xsd:enumeration value="6"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:attribute>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Adults">
+                <xsd:complexType>
+                    <xsd:attribute name="number">
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:enumeration value="0"/>
+                                <xsd:enumeration value="1"/>
+                                <xsd:enumeration value="2"/>
+                                <xsd:enumeration value="3"/>
+                                <xsd:enumeration value="4"/>
+                                <xsd:enumeration value="5"/>
+                                <xsd:enumeration value="6"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:attribute>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Seniors">
+                <xsd:complexType>
+                    <xsd:attribute name="number">
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:enumeration value="0"/>
+                                <xsd:enumeration value="1"/>
+                                <xsd:enumeration value="2"/>
+                                <xsd:enumeration value="3"/>
+                                <xsd:enumeration value="4"/>
+                                <xsd:enumeration value="5"/>
+                                <xsd:enumeration value="6"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:attribute>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
 </xsd:schema>
 
