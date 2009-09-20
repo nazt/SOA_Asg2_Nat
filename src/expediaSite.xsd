@@ -94,6 +94,17 @@
             <xsd:enumeration value="Multiple definitions"/>
         </xsd:restriction>
     </xsd:simpleType>
+    <xsd:simpleType name="ServiceType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Flight"/>
+            <xsd:enumeration value="Hotel"/>
+            <xsd:enumeration value="Car"/>
+            <xsd:enumeration value="Cruise"/>
+            <xsd:enumeration value="Activities"/>
+            <xsd:enumeration value="Flight + Hotel"/>
+            <xsd:enumeration value="Flight + Car"/>
+            <xsd:enumeration value="Flight + Hotel + Car"/>
+            <xsd:enumeration value="Hotel + Car"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 </xsd:schema>
-
-
