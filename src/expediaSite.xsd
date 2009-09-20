@@ -79,7 +79,7 @@
             </xsd:simpleType>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:simpleType name="Airlines">
+    <xsd:simpleType name="AirlinesList">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="American Airlines"/>
             <xsd:enumeration value="China Airlines"/>
