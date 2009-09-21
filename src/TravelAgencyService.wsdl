@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="TravelAgencyService" targetNamespace="http://j2ee.netbeans.org/wsdl/Assignment2/TravelAgencyService"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/Assignment2/TravelAgencyService" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns0="http://xml.netbeans.org/schema/FlightReservation" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <types>
+        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/Assignment2/TravelAgencyService">
+            <xsd:import namespace="http://xml.netbeans.org/schema/FlightReservation" schemaLocation="FlightReservation.xsd"/>
+            <xsd:element name="viewFlightResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="flightNumber" type="xsd:string"></xsd:element>
+                        <xsd:element name="airline" type="ns0:AirlinesList"></xsd:element>
+                        <xsd:element name="departureAirport" type="xsd:string"></xsd:element>
+                        <xsd:element name="departureCity" type="xsd:string"></xsd:element>
+                        <xsd:element name="arrivalAirport" type="xsd:string"></xsd:element>
+                        <xsd:element name="arrivalCity" type="xsd:string"></xsd:element>
+                        <xsd:element name="connectingCity" type="xsd:string"></xsd:element>
+                        <xsd:element name="departureDate" type="xsd:date"></xsd:element>
+                        <xsd:element name="departureTime" type="xsd:time"></xsd:element>
+                        <xsd:element name="flightDuration" type="xsd:duration"></xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </types>
+    <message name="viewFlightOperationRequest">
+        <part name="body" type="ns0:FlightReservationType"/>
+    </message>
+    <message name="viewFlightOperationResponse">
+        <part name="body" element="tns:viewFlightResponse"/>
+    </message>
+    <portType name="TravelAgencyServicePortType">
+        <operation name="TravelAgencyServiceOperation">
+            <input name="input1" message="tns:viewFlightOperationRequest"/>
+            <output name="output1" message="tns:viewFlightOperationResponse"/>
+        </operation>
+    </portType>
+    <binding name="TravelAgencyServicePortTypeBinding" type="tns:TravelAgencyServicePortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="TravelAgencyServiceOperation">
+            <soap:operation/>
+            <input name="input1">
+                <soap:body use="literal"/>
+            </input>
+            <output name="output1">
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="TravelAgencyService">
+        <port name="TravelAgencyPort" binding="tns:TravelAgencyServicePortTypeBinding"/>
+    </service>
+    <plnk:partnerLinkType name="TravelAgencyService">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes.
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="TravelAgencyServicePortTypeRole" portType="tns:TravelAgencyServicePortType"/>
+    </plnk:partnerLinkType>
+</definitions>
+
+
+
+

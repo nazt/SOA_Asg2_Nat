@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="FlightReservationService" targetNamespace="http://j2ee.netbeans.org/wsdl/Assignment2/FlightReservationService"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/Assignment2/FlightReservationService" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <types/>
+    <message name="FlightReservationServiceOperationRequest">
+        <part name="listOfPeopleName" type="xsd:string"/>
+        <part name="numberOfPeople" type="xsd:decimal"/>
+        <part name="flightNumber" type="xsd:decimal"/>
+    </message>
+    <message name="FlightReservationServiceOperationResponse">
+        <part name="cost" type="xsd:integer"/>
+        <part name="confirmationID" type="xsd:decimal"/>
+    </message>
+    <portType name="FlightReservationServicePortType">
+        <operation name="FlightReservationServiceOperation">
+            <input name="input1" message="tns:FlightReservationServiceOperationRequest"/>
+            <output name="output1" message="tns:FlightReservationServiceOperationResponse"/>
+        </operation>
+    </portType>
+    <binding name="FlightReservationServicePortTypeBinding" type="tns:FlightReservationServicePortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="FlightReservationServiceOperation">
+            <soap:operation/>
+            <input name="input1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/FlightReservation"/>
+            </input>
+            <output name="output1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/FlightReservation"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="FlightReservationService1">
+        <port name="FlightReservationServicePort" binding="tns:FlightReservationServicePortTypeBinding"/>
+    </service>
+    <plnk:partnerLinkType name="FlightReservationService">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes.
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="FlightReservationServicePortTypeRole" portType="tns:FlightReservationServicePortType"/>
+    </plnk:partnerLinkType>
+</definitions>
+
+
+
+
+
