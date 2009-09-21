@@ -10,7 +10,7 @@
         <part name="flightNumber" type="xsd:decimal"/>
     </message>
     <message name="FlightReservationServiceOperationResponse">
-        <part name="cost" type="xsd:integer"/>
+        <part name="cost" type="xsd:decimal"/>
         <part name="confirmationID" type="xsd:decimal"/>
     </message>
     <portType name="FlightReservationServicePortType">
