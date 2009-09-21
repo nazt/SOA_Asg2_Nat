@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : FlightReservation1.xml
+    Created on : September 21, 2009, 5:55 AM
+    Author     : NAzT
+    Description:
+        Purpose of the document follows.
+-->
+
+<ns0:FlightReservation  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+   xmlns:ns0='http://xml.netbeans.org/schema/FlightReservation'
+   xsi:schemaLocation='http://xml.netbeans.org/schema/FlightReservation FlightReservation.xsd'>
+  <ns0:Service>Flight</ns0:Service>
+    <ns0:Ticket>One Way</ns0:Ticket>
+    <ns0:LeavingFrom>USA</ns0:LeavingFrom>
+    <ns0:GoingTo>Bangkok</ns0:GoingTo>
+    <ns0:DepartingDate>2009-08-11</ns0:DepartingDate>
+    <ns0:DapartingTime>10 AM</ns0:DapartingTime>
+    <ns0:ReturningDate>2009-08-13</ns0:ReturningDate>
+    <ns0:ReturningTime>1 AM</ns0:ReturningTime>
+    <ns0:Passengers>
+        <ns0:Adults>3</ns0:Adults>
+        <ns0:Seniors>5</ns0:Seniors>
+        <ns0:Childrens>2</ns0:Childrens>
+    </ns0:Passengers>
+    <ns0:NonStopOnly>false</ns0:NonStopOnly>
+    <ns0:AvoidMostChangePenalty>true</ns0:AvoidMostChangePenalty>
+    <ns0:Airline>American Airlines</ns0:Airline>
+    <ns0:AirlineClass>FirstClass</ns0:AirlineClass>
+
+
+</ns0:FlightReservation>
