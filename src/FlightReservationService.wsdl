@@ -6,12 +6,12 @@
     <types/>
     <message name="FlightReservationServiceOperationRequest">
         <part name="listOfPeopleName" type="xsd:string"/>
-        <part name="numberOfPeople" type="xsd:integer"/>
-        <part name="flightNumber" type="xsd:integer"/>
+        <part name="numberOfPeople" type="xsd:decimal"/>
+        <part name="flightNumber" type="xsd:decimal"/>
     </message>
     <message name="FlightReservationServiceOperationResponse">
         <part name="cost" type="xsd:integer"/>
-        <part name="confirmationID" type="xsd:int"/>
+        <part name="confirmationID" type="xsd:decimal"/>
     </message>
     <portType name="FlightReservationServicePortType">
         <operation name="FlightReservationServiceOperation">
@@ -24,13 +24,16 @@
         <operation name="FlightReservationServiceOperation">
             <soap:operation/>
             <input name="input1">
-                <soap:body use="literal"/>
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/FlightReservation"/>
             </input>
             <output name="output1">
-                <soap:body use="literal"/>
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/FlightReservation"/>
             </output>
         </operation>
     </binding>
+    <service name="FlightReservationService1">
+        <port name="FlightReservationServicePort" binding="tns:FlightReservationServicePortTypeBinding"/>
+    </service>
     <plnk:partnerLinkType name="FlightReservationService">
         <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes.
 In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
@@ -38,6 +41,7 @@ A partner link type characterizes the conversational relationship between two se
         <plnk:role name="FlightReservationServicePortTypeRole" portType="tns:FlightReservationServicePortType"/>
     </plnk:partnerLinkType>
 </definitions>
+
 
 
 
