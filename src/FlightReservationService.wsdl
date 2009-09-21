@@ -5,8 +5,8 @@
     xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/Assignment2/FlightReservationService" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
     <types/>
     <message name="FlightReservationServiceOperationRequest">
-        <part name="listOfPeoplesName" type="xsd:string"/>
-        <part name="numberOfPeoples" type="xsd:integer"/>
+        <part name="listOfPeopleName" type="xsd:string"/>
+        <part name="numberOfPeople" type="xsd:integer"/>
         <part name="flightNumber" type="xsd:integer"/>
     </message>
     <message name="FlightReservationServiceOperationResponse">
